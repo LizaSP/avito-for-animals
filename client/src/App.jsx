@@ -28,16 +28,14 @@ import SendedOffersPage from './components/Pages/SendedOffersPage';
 import OneOfferPage from './components/Pages/OfferPage/OneOfferPage';
 
 function App() {
-  // спросить про searchpage
   const dispatch = useDispatch();
-  // const navigate = useNavigate();
+
   useEffect(() => {
     dispatch({ type: 'CHECK_USER' });
   }, []);
+
   const user = useSelector((state) => state.user);
-  // useEffect(() => {
-  //   navigate('/');
-  // }, [user?.role]);
+
   return (
     <>
       <CssBaseline />
@@ -49,21 +47,20 @@ function App() {
           <div id="page-container" style={{ position: 'relative', minHeight: '100vh' }}>
             <div id="content-wrap" style={{ marginBottom: '5em' }}>
               <LoaderWrapper>
-                {/* <Navbar /> */}
                 <MUINavBar />
                 <div style={{ padding: '2em 2em 15em 2em' }}>
                   <Routes>
-                    {/* когда не залогинился - не доступны */}
+                    {/* когда залогинился - не доступны */}
                     <Route element={<ProtectedRoute redirect="/" isAllowed={!user.id} />}>
                       <Route path="/signup" element={<SignUpPage type />} />
                       <Route path="/login" element={<SignUpPage type={false} />} />
                     </Route>
                     {/* доступны всем */}
                     <Route path="/" element={<HomePage />} />
-                    <Route path="/search" element={<SearchPage />} />
-                    <Route path="/search/:animal" element={<SearchPage />} />
                     {/* пока не залогинился - не доступны */}
                     <Route element={<ProtectedRoute redirect="/" isAllowed={!!user.id} />}>
+                      <Route path="/search" element={<SearchPage />} />
+                      <Route path="/search/:animal" element={<SearchPage />} />
                       <Route path="/profile/:id" element={<ProfilePage />} />
                       <Route path="/profile/edit" element={<EditProfilePage />} />
                       {/* со  стороны хантера */}
@@ -72,13 +69,11 @@ function App() {
                       {/* со  стороны владельца */}
                       <Route path="/offers" element={<SendedOffersPage />} />
                       <Route path="/offers/:id" element={<OneOfferPage />} />
-                      {/* <Route path="/owner_requests" element={<OwnerRequestsPage />} /> */}
+
                       <Route path="/animals/new" element={<CreateAnimal />} />
                       <Route path="/animals/:id/edit" element={<EditAnimal />} />
                       <Route path="/favourites/:id" element={<FavouritesPage />} />
                       <Route path="/babysitter" element={<BabysiterForm />} />
-                      {/* surprise */}
-                      {/* <Route path="/chat/:id" element={<HappyBirthdayPage />} /> */}
                     </Route>
                     <Route path="*" element={<NoPage />} />
                   </Routes>

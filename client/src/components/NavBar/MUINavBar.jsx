@@ -167,12 +167,12 @@ function MUINavBar({ drawerWidth }) {
                   display: { xs: 'block', md: 'none' },
                 }}
               >
-                <MenuItem component={NavLink} to="/search" onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">Поиск</Typography>
-                </MenuItem>
                 {user?.id
                 && (
                   <Box>
+                    <MenuItem component={NavLink} to="/search" onClick={handleCloseNavMenu}>
+                      <Typography textAlign="center">Поиск</Typography>
+                    </MenuItem>
                     <MenuItem component={NavLink} to="/requests" onClick={handleCloseNavMenu}>
                       <Typography textAlign="center">Мои заявки</Typography>
                     </MenuItem>
@@ -209,20 +209,20 @@ function MUINavBar({ drawerWidth }) {
               GERASIM_
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-              <Button
-                // theme={hover}
-                id="hover"
-                // style={getStyles(Button:hover, 'white', theme)}
-                onClick={handleCloseNavMenu}
-                component={NavLink}
-                to="/search"
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                Поиск
-              </Button>
               {user?.id
                 && (
                   <Box sx={{ display: 'flex' }}>
+                    <Button
+                // theme={hover}
+                      id="hover"
+                // style={getStyles(Button:hover, 'white', theme)}
+                      onClick={handleCloseNavMenu}
+                      component={NavLink}
+                      to="/search"
+                      sx={{ my: 2, color: 'white', display: 'block' }}
+                    >
+                      Поиск
+                    </Button>
                     <Button
                       // theme={hover}
                       id="hover"
