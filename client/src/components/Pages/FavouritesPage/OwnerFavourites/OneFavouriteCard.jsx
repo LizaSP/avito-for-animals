@@ -36,7 +36,7 @@ export default function OneFavouriteCard({ card }) {
   };
   return (
     <div className="col-3">
-      <div className="card" style={{ width: '18rem', height: '490px' }}>
+      <div className="card" style={{ width: '18rem', height: '390px' }}>
         <CardMedia component="img" src={`/images/${card?.User?.avatar}`} className="card-img-top" alt="img" style={{ height: '300px' }} />
         <div className="card-body">
           <h5 className="card-title">
