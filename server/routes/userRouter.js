@@ -12,10 +12,6 @@ router.post('/signup', upload.single('images'), async (req, res) => {
   const {
     firstName, lastName, email, password, gender, phone, info, location, status, websites,
   } = req.body;
-  // console.log('qww', req.body);
-  // console.log('reqfile', (req.file.name));
-  // console.log('reqfile222', (req.file.filename));
-  // console.log('reqfile name', (req.file.filename));
   if (firstName && lastName && email && password) {
     try {
       const [user, created] = await User.findOrCreate({

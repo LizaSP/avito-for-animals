@@ -7,7 +7,7 @@ import {
   CarouselIndicators,
   CarouselCaption,
 } from 'reactstrap';
-
+// фотографии для карусели
 const items = [
   {
     src: 'https://static.mk.ru/upload/entities/2021/06/16/10/articles/facebookPicture/8b/b8/b5/f7/d5a31497c14d4e2bc37f26d7a9cf712d.jpg',
@@ -19,19 +19,19 @@ const items = [
     src: 'https://funnymodo.com/wp-content/uploads/2016/09/1475258300_maxresdefault.jpg',
     altText: '',
     caption: '',
-    key: 3,
+    key: 2,
   },
   {
     src: 'https://s00.yaplakal.com/pics/pics_original/2/3/4/12863432.jpg',
     altText: '',
     caption: '',
-    key: 4,
+    key: 3,
   },
   {
     src: 'https://img.fonwall.ru/o/jm/rigiy-kot-prelestnaya-ulibka.jpg?route=mid&h=750',
     altText: '',
     caption: '',
-    key: 5,
+    key: 4,
   },
   {
     src: 'https://4tololo.ru/sites/default/files/images/20181604131431_0.jpg',
@@ -85,7 +85,6 @@ export default function Carusel() {
       style={{
         textAlign: 'center',
       }}
-      // {...args}
     >
       <CarouselIndicators
         items={items}
